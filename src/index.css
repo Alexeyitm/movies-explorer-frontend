@@ -1,9 +1,3 @@
-@font-face {
-  src: url(./vendor/fonts/Inter-Regular.woff) format('woff');
-  font-family: 'Inter';
-}
-
-@font-face {
-  src: url(./vendor/fonts/Inter-Medium.woff) format('woff');
-  font-family: 'Inter';
-}
+/* Normalize and fonts */
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts/fonts.css);

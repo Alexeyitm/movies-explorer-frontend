@@ -1,0 +1,30 @@
+.footer__info {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 340px) {
+  .footer__info {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-top: 30px;
+  }
+}
+
+.footer__date {
+  margin: 0;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+@media screen and (max-width: 340px) {
+  .footer__date {
+    font-size: 12px;
+    line-height: 15px;
+    color: #8B8B8B;
+    margin-top: 30px;
+  }
+}
