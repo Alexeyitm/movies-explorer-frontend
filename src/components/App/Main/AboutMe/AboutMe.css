@@ -143,6 +143,7 @@
   line-height: 17px;
   text-decoration: none;
   color: #FFFFFF;
+  cursor: pointer;
 }
 
 .about-me__photo {
