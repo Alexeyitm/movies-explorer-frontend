@@ -1,0 +1,125 @@
+.header {
+  background: #202020;
+}
+
+.header_landing {
+  background: #073042;
+}
+
+.header__container {
+  max-width: 1140px;
+  padding: 18px 70px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .header__container {
+    padding: 18px 30px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .header__container {
+    padding: 18px 14px;
+  }
+}
+
+.header__logo {
+  width: 38px;
+  height: 38px;
+  background: url(../../../images/header-logo.png) no-repeat;
+  background-size: cover;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  width: calc(100% - 82px);
+}
+
+@media screen and (max-width: 768px) {
+  .header__nav {
+    display: none;
+  }
+}
+
+.header__link {
+  font-size: 13px;
+  line-height: 18px;
+  cursor: pointer;
+}
+
+.header__link:first-child {
+  margin-right: 16px;
+  font-weight: 500;
+}
+
+.header__link:nth-child(2) {
+  font-weight: 400;
+}
+
+.header__link:last-child {
+  position: relative;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 12px;
+  margin: 0 33px 0 auto;
+}
+
+.header__link:last-child::after {
+  content: '';
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: #313131;
+  background-image: url('../../../images/account-logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50px;
+  top: -7px;
+  margin-left: 7px;
+}
+
+.header__burger {
+  display: none;
+  width: 28px;
+  height: 23px;
+  margin: 7px 8px 0 0;
+  padding: 0;
+  border: none;
+  background-color: inherit;
+}
+
+@media screen and (max-width: 768px) {
+  .header__burger {
+    display: block;
+  }
+}
+
+.header__burger-line {
+  width: 100%;
+  height: 3px;
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+.header__burger-line::before {
+  content: '';
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  top: -10px;
+  left: 0;
+  background-color: #FFFFFF;
+}
+
+.header__burger-line::after {
+  content: '';
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background-color: #FFFFFF;
+}
