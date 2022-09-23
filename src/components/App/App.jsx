@@ -1,10 +1,17 @@
 import './App.css';
-import Main from './Main/Main';
+import Header from '../Header/Header';
+import Main from '../Main/Main';
+import Movies from '../Movies/Movies';
+import Footer from '../Footer/Footer';
 
 function App() {
   return (
     <div className="app">
-      <Main/>
+      <Header/>
+
+      <Movies/>
+
+      <Footer/>
     </div>
   );
 }

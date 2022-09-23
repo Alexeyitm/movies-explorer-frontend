@@ -80,7 +80,7 @@
   content: "";
   width: 29px;
   height: 60px;
-  background: url(../../../../images/portfolio-arrow.svg) no-repeat;
+  background: url(../../images/portfolio-arrow.svg) no-repeat;
   background-size: contain;
   background-position: center;
   position: absolute;
