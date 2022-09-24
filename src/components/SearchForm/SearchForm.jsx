@@ -1,6 +1,7 @@
 import './SearchForm.css';
+import Checkbox from '../Checkbox/Checkbox';
 
-function SearchForm() {
+function SearchForm({ isActiveCheckbox, setCheckbox }) {
   return (
     <div className="search-form">
       <div className="search-form__container">
@@ -10,7 +11,10 @@ function SearchForm() {
             <button className="search-form__button" type="submit"></button>
           </div>
           <div className="search-form__check">
-            <input className="search-form__checkbox" type="checkbox" id="checkbox"></input>
+            <Checkbox
+              isActiveCheckbox={isActiveCheckbox}
+              setCheckbox={setCheckbox}
+            />
             <label className="search-form__label" htmlFor="checkbox">Короткометражки</label>
           </div>
         </form>

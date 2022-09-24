@@ -2,10 +2,13 @@ import './Movies.css';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 
-function Movies() {
+function Movies({ isActiveCheckbox, setCheckbox }) {
   return (
     <div className="movies">
-      <SearchForm/>
+      <SearchForm
+        isActiveCheckbox={isActiveCheckbox}
+        setCheckbox={setCheckbox}
+      />
       <MoviesCardList/>
     </div>
   );

@@ -1,22 +1,24 @@
 import './Header.css';
+import BurgerButton from '../BurgerButton/BurgerButton';
 
-function Header({ landing }) {
+function Header({ isActiveBurger, setBurger }) {
   return (
-    <header className={`header ${landing ? "header_landing" : ""}`}>
+    <header className="header">
       <div className="header__container">
         <div className="header__logo"></div>
-        <nav className={`header__nav-landing ${landing ? "header__nav-landing_visible" : ""}`}>
+        <nav className="header__nav-landing">
           <a className="header__link">Фильмы</a>
           <a className="header__link">Сохранённые фильмы</a>
           <a className="header__link">Аккаунт</a>
         </nav>
-        <nav className={`header__nav-main ${landing ? "" : "header__nav-main_visible"}`}>
+        <nav className="header__nav-main">
           <a className="header__link-registration">Регистрация</a>
           <a className="header__link-signin">Войти</a>
         </nav>
-        <button className={`header__burger ${landing ? "header__burger_landing" : ""}`}>
-          <div className="header__burger-line"></div>
-        </button>
+        <BurgerButton
+          isActiveBurger={isActiveBurger}
+          setBurger={setBurger}
+        />
       </div>
     </header>
   );
