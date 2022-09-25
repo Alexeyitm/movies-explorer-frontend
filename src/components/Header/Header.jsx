@@ -1,21 +1,22 @@
 import './Header.css';
 import BurgerButton from '../BurgerButton/BurgerButton';
 
-function Header({ isActiveBurger, setBurger }) {
+function Header({ isLogined, isActiveBurger, setBurger }) {
   return (
-    <header className="header">
+    <header className={`header ${isLogined ? "header_landing" : ""}`}>
       <div className="header__container">
         <div className="header__logo"></div>
-        <nav className="header__nav-landing">
+        <nav className={`header__nav-landing ${isLogined ? "header__nav-landing_hidden" : ""}`}>
           <a className="header__link">Фильмы</a>
           <a className="header__link">Сохранённые фильмы</a>
           <a className="header__link">Аккаунт</a>
         </nav>
-        <nav className="header__nav-main">
+        <nav className={`header__nav-main ${isLogined ? "" : "header__nav-main_hidden"}`}>
           <a className="header__link-registration">Регистрация</a>
           <a className="header__link-signin">Войти</a>
         </nav>
         <BurgerButton
+          isLogined={isLogined}
           isActiveBurger={isActiveBurger}
           setBurger={setBurger}
         />

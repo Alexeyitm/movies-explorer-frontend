@@ -1,13 +1,17 @@
 import './BurgerButton.css';
 
-function BurgerButton({ isActiveBurger, setBurger }) {
+function BurgerButton({ isLogined, isActiveBurger, setBurger }) {
 
   const onClickBurger = () => {
     setBurger(!isActiveBurger);
+
+    isActiveBurger 
+      ? document.body.style.overflowY = "visible"
+      : document.body.style.overflowY = "hidden";
   }
 
   return (
-    <button className="burger" onClick={onClickBurger}>
+    <button className={`burger ${isLogined ? "burger_hidden" : ""}`} onClick={onClickBurger}>
       <div className={`burger__line ${isActiveBurger ? "burger__line_active" : ""}`}></div>
     </button> 
   );

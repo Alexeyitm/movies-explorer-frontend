@@ -39,7 +39,7 @@
   width: calc(100% - 82px);
 }
 
-.header__nav-landing_visible {
+.header__nav-landing_hidden {
   display: none;
 }
 
@@ -101,7 +101,7 @@
   }
 }
 
-.header__nav-main_visible {
+.header__nav-main_hidden {
   display: none;
 }
 

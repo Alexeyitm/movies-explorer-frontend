@@ -8,6 +8,11 @@
   background-color: inherit;
   cursor: pointer;
   overflow: hidden;
+  z-index: 2;
+}
+
+.burger_hidden {
+  display: none !important;
 }
 
 @media screen and (max-width: 768px) {
