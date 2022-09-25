@@ -13,15 +13,19 @@ function App() {
   const [isActiveCheckbox, setCheckbox] = useState(false);
   const [isActiveBurger, setBurger] = useState(false);
 
-  const closeBurgerByEsc = (e) => {
-    if (e.key === "Escape") {
-      setBurger(false);
-    }
-  }
-  
   useEffect(() => {
-    closeBurgerByEsc();
-  },[])
+    function closeByEscape(e) {
+      if (e.key === 'Escape') {
+        setBurger();
+      }
+    }
+    if (isActiveBurger) {
+      document.addEventListener('keydown', closeByEscape);
+      return () => {
+        document.removeEventListener('keydown', closeByEscape);
+      }
+    }
+  }, [isActiveBurger]);
 
   return (
     <div className="app">
