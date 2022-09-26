@@ -1,8 +1,15 @@
 import './App.css';
 import { useState, useEffect } from 'react';
+import React from "react";
+import {
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Movies from '../Movies/Movies';
+import SavedMovies from '../SavedMovies/SavedMovies';
 import NotFound from '../NotFound/NotFound';
 import Footer from '../Footer/Footer';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
@@ -10,7 +17,7 @@ import BurgerMenu from '../BurgerMenu/BurgerMenu';
 function App() {
 
   const [isLogined, setLogined] = useState(false);
-  const [isActiveCheckbox, setCheckbox] = useState(false);
+  const [isActiveCheckbox, setCheckbox] = useState(true);
   const [isActiveBurger, setBurger] = useState(false);
 
   useEffect(() => {
@@ -28,23 +35,38 @@ function App() {
   }, [isActiveBurger]);
 
   return (
-    <div className="app">
-      <Header
-        isLogined={isLogined}
-        isActiveBurger={isActiveBurger}
-        setBurger={setBurger}
-      />
-      <Movies
-        isActiveCheckbox={isActiveCheckbox}
-        setCheckbox={setCheckbox}
-      />
+    
+      <div className="app">
+        <Header
+          isLogined={isLogined}
+          isActiveBurger={isActiveBurger}
+          setBurger={setBurger}
+        />
 
-      <BurgerMenu
-        isActiveBurger={isActiveBurger}
-      />
+        <Routes>
+          <Route path='/' element={<Main/>}/>
+          <Route path='/movies' element={
+            <Movies
+              isActiveCheckbox={isActiveCheckbox}
+              setCheckbox={setCheckbox}
+            />
+          }/>
+          <Route path='/saved-movies' element={
+            <SavedMovies
+              isActiveCheckbox={isActiveCheckbox}
+              setCheckbox={setCheckbox}
+            />
+          }/>
+          <Route path='/*' element={<NotFound/>}/>
+        </Routes>
 
-      <Footer/>
-    </div>
+        <BurgerMenu
+          isActiveBurger={isActiveBurger}
+        />
+
+        <Footer/>
+      </div>
+    
   );
 }
 
