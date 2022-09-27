@@ -7,7 +7,7 @@ function Footer() {
   const location = useLocation();
 
   return (
-    <footer className={`footer ${location.pathname === "/profile" ? "footer_hidden" : ""}`}>
+    <footer className={`footer ${location.pathname === "/profile" || "/register" || "/login" ? "footer_hidden" : ""}`}>
       <div className="footer__container">
         <p className="footer__title">
           Учебный проект Яндекс.Практикум х BeatFilm.
