@@ -14,7 +14,6 @@ import BurgerMenu from '../BurgerMenu/BurgerMenu';
 
 function App() {
 
-  const [isLogined, setLogined] = useState(false);
   const [isActiveCheckbox, setCheckbox] = useState(true);
   const [isActiveBurger, setBurger] = useState(false);
 
@@ -35,7 +34,6 @@ function App() {
   return (
       <div className="app">
         <Header
-          isLogined={isLogined}
           isActiveBurger={isActiveBurger}
           setBurger={setBurger}
         />

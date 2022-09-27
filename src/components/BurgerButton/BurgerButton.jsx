@@ -1,6 +1,9 @@
 import './BurgerButton.css';
+import { useLocation } from "react-router-dom";
 
-function BurgerButton({ isLogined, isActiveBurger, setBurger }) {
+function BurgerButton({ isActiveBurger, setBurger }) {
+
+  const location = useLocation();
 
   const onClickBurger = () => {
     setBurger(!isActiveBurger);
@@ -11,7 +14,7 @@ function BurgerButton({ isLogined, isActiveBurger, setBurger }) {
   }
 
   return (
-    <button className={`burger ${isLogined ? "burger_hidden" : ""}`} onClick={onClickBurger}>
+    <button className={`burger ${location.pathname === "/" ? "burger_hidden" : ""}`} onClick={onClickBurger}>
       <div className={`burger__line ${isActiveBurger ? "burger__line_active" : ""}`}></div>
     </button> 
   );

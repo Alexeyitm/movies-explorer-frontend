@@ -2,7 +2,7 @@ import './Header.css';
 import { NavLink, useLocation } from "react-router-dom";
 import BurgerButton from '../BurgerButton/BurgerButton';
 
-function Header({ isLogined, isActiveBurger, setBurger }) {
+function Header({ isActiveBurger, setBurger }) {
 
   const location = useLocation();
   
@@ -18,17 +18,16 @@ function Header({ isLogined, isActiveBurger, setBurger }) {
       <NavLink to="/">
         <div className="header__logo"></div>
       </NavLink>
-        <nav className={`header__nav-landing ${isLogined ? "header__nav-landing_hidden" : ""}`}>
+        <nav className={`header__nav-landing ${location.pathname === "/" ? "header__nav-landing_hidden" : ""}`}>
           <NavLink className="header__link" to="movies">Фильмы</NavLink>
           <NavLink className="header__link" to="saved-movies">Сохранённые фильмы</NavLink>
           <NavLink className="header__link" to="profile">Аккаунт</NavLink>
         </nav>
-        <nav className={`header__nav-main ${isLogined ? "" : "header__nav-main_hidden"}`}>
+        <nav className={`header__nav-main ${location.pathname === "/" ? "" : "header__nav-main_hidden"}`}>
           <a className="header__link-registration">Регистрация</a>
           <a className="header__link-signin">Войти</a>
         </nav>
         <BurgerButton
-          isLogined={isLogined}
           isActiveBurger={isActiveBurger}
           setBurger={setBurger}
         />
