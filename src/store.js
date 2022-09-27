@@ -11,6 +11,10 @@ import image10 from './images/image10.jpg';
 import image11 from './images/image11.jpg';
 import image12 from './images/image12.jpg';
 
+export const user = {
+  name: "Alexey",
+  email: "ponomarevmgn@gmail.ru"
+}
 
 export const store = [
   {

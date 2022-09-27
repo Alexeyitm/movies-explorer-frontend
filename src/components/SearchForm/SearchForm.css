@@ -29,7 +29,7 @@
   position: absolute;
   width: 22px;
   height: 22px;
-  background-image: url(../../images/search-form.png);
+  background-image: url(../../images/search-input.svg);
   top: 25px;
   left: 25px;
 }
@@ -84,7 +84,7 @@
   width: 80px;
   height: 34px;
   background: #4285F4;
-  background-image: url(../../images/search-form.png);
+  background-image: url(../../images/search-button.svg);
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 48px;

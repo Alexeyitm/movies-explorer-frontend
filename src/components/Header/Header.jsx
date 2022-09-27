@@ -6,7 +6,9 @@ function Header({ isLogined, isActiveBurger, setBurger }) {
   return (
     <header className={`header ${isLogined ? "header_landing" : ""}`}>
       <div className="header__container">
+      <NavLink to="/">
         <div className="header__logo"></div>
+      </NavLink>
         <nav className={`header__nav-landing ${isLogined ? "header__nav-landing_hidden" : ""}`}>
           <NavLink className="header__link" to="movies">Фильмы</NavLink>
           <NavLink className="header__link" to="saved-movies">Сохранённые фильмы</NavLink>

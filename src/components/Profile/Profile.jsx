@@ -1,16 +1,36 @@
 import './Profile.css';
+import { user } from '../../store.js'
 
 function Profile() {
   return (
     <div className="profile">
       <div className="profile__container">
-        <h2 className="profile__title">Привет, Виталий!</h2>
+        <h2 className="profile__title">Привет, {user.name}!</h2>
         <form className="profile__form">
-          <input id="name" className="profile__input profile__input_name" type="text" name="name" placeholder="Введите имя пользователя"/>
-          <input id="email" className="profile__input profile__input_email" type="text" name="email" placeholder="Введите почту пользователя"/>
-
-          <button className="profile__button-save" type="submit"></button>
-          <button className="profile__button-save" type="submit"></button>
+          <div className="profile__name">
+            <label htmlFor="name" className="profile__label">Имя</label>
+            <input
+              id="name"
+              className="profile__input profile__input_name"
+              type="text"
+              name="name"
+              placeholder="Введите имя пользователя"
+              defaultValue={user.name}
+            />
+          </div>
+          <div className="profile__email">
+            <label htmlFor="email" className="profile__label">E-mail</label>
+            <input
+              id="email"
+              className="profile__input profile__input_email"
+              type="text"
+              name="email"
+              placeholder="Введите почту пользователя"
+              defaultValue={user.email}
+            />
+          </div>
+          <button className="profile__button profile__button_edit">Редактировать</button>
+          <button className="profile__button profile__button_exit">Выйти из аккаунта</button>
         </form>
       </div>
     </div>
