@@ -61,6 +61,7 @@ function App() {
 
         <BurgerMenu
           isActiveBurger={isActiveBurger}
+          setBurger={setBurger}
         />
 
         <Footer/>
