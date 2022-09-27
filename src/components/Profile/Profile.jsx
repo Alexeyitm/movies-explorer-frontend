@@ -23,7 +23,7 @@ function Profile() {
             <input
               id="email"
               className="profile__input profile__input_email"
-              type="text"
+              type="email"
               name="email"
               placeholder="Введите почту пользователя"
               defaultValue={user.email}
