@@ -1,0 +1,35 @@
+.profile {
+  width: 100%;
+  background: #202020;
+}
+
+.profile__container {
+  padding: 74px 0 70px;
+}
+
+@media screen and (max-width: 768px) {
+  .profile__container {
+    padding: 236px 0 269px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .profile__container {
+    padding: 70px 0 40px;
+  }
+}
+
+.profile__title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+}
+
+.profile__form {
+  margin: 123px auto 0;
+  width: 410px;
+  display: flex;
+  flex-direction: column;
+}
