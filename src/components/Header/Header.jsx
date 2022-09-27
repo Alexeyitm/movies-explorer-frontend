@@ -1,10 +1,13 @@
 import './Header.css';
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import BurgerButton from '../BurgerButton/BurgerButton';
 
 function Header({ isLogined, isActiveBurger, setBurger }) {
+
+  const location = useLocation();
+  
   return (
-    <header className={`header ${isLogined ? "header_landing" : ""}`}>
+    <header className={`header ${isLogined ? "header_landing" : ""} ${location.pathname === ("/register" || "/login") ? "header_hidden" : ""}`}>
       <div className="header__container">
       <NavLink to="/">
         <div className="header__logo"></div>
