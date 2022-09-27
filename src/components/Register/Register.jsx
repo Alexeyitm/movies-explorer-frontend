@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 function Register() {
   return (
     <div className="register">
-        <div className="register__logo"></div>
+        <NavLink className="register__logo" to="/"></NavLink>
         <h2 className="register__title">Добро пожаловать!</h2>
         <form className="register__form">
           <label htmlFor="name" className="register__label">Имя</label>

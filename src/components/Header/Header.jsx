@@ -7,7 +7,13 @@ function Header({ isLogined, isActiveBurger, setBurger }) {
   const location = useLocation();
   
   return (
-    <header className={`header ${isLogined ? "header_landing" : ""} ${location.pathname === ("/register" || "/login") ? "header_hidden" : ""}`}>
+    <header className={`header
+      ${location.pathname === ("/register" || "/login") 
+        ? "header_hidden"
+        : location.pathname === "/"
+          ? "header_landing"
+          : ""}`}
+    >
       <div className="header__container">
       <NavLink to="/">
         <div className="header__logo"></div>
