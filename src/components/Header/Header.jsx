@@ -8,7 +8,7 @@ function Header({ isActiveBurger, setBurger }) {
   
   return (
     <header className={`header
-      ${location.pathname === ("/register" || "/login") 
+      ${location.pathname === "/register" || location.pathname === "/login" 
         ? "header_hidden"
         : location.pathname === "/"
           ? "header_landing"
@@ -24,8 +24,8 @@ function Header({ isActiveBurger, setBurger }) {
           <NavLink className="header__link" to="profile">Аккаунт</NavLink>
         </nav>
         <nav className={`header__nav-main ${location.pathname === "/" ? "" : "header__nav-main_hidden"}`}>
-          <a className="header__link-registration">Регистрация</a>
-          <a className="header__link-signin">Войти</a>
+          <NavLink className="header__link-registration" to="register">Регистрация</NavLink>
+          <NavLink className="header__link-signin" to="login">Войти</NavLink>
         </nav>
         <BurgerButton
           isActiveBurger={isActiveBurger}
