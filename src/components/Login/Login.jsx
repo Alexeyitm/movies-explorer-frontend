@@ -21,10 +21,10 @@ function Login() {
             type="password"
             name="password"
           />
-          <button className="login__button-login">Зарегистрироваться</button>
+          <button className="login__button-login">Войти</button>
           <div className="login__register">
-            <span className="login__span">Уже зарегистрированы?</span>
-            <NavLink className="login__register-link">Войти</NavLink>
+            <span className="login__span">Ещё не зарегистрированы?</span>
+            <NavLink className="login__register-link" to="/register">Регистрация</NavLink>
           </div>
         </form>
     </div>
