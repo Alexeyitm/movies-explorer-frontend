@@ -107,6 +107,10 @@
   cursor: pointer;
 }
 
+.search-form__button:hover {
+  opacity: .8;
+}
+
 .search-form__button::after {
   content: "";
   position: absolute;

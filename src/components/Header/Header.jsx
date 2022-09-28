@@ -19,9 +19,9 @@ function Header({ isActiveBurger, setBurger }) {
         <div className="header__logo"></div>
       </NavLink>
         <nav className={`header__nav-landing ${location.pathname === "/" ? "header__nav-landing_hidden" : ""}`}>
-          <NavLink className="header__link" to="movies">Фильмы</NavLink>
-          <NavLink className="header__link" to="saved-movies">Сохранённые фильмы</NavLink>
-          <NavLink className="header__link" to="profile">Аккаунт</NavLink>
+          <NavLink className={({isActive}) => "header__link" + (isActive ? " header__link_active" : "")} to="movies">Фильмы</NavLink>
+          <NavLink className={({isActive}) => "header__link" + (isActive ? " header__link_active" : "")} to="saved-movies">Сохранённые фильмы</NavLink>
+          <NavLink className={({isActive}) => "header__link" + (isActive ? " header__link_active" : "")} to="profile">Аккаунт</NavLink>
         </nav>
         <nav className={`header__nav-main ${location.pathname === "/" ? "" : "header__nav-main_hidden"}`}>
           <NavLink className="header__link-registration" to="register">Регистрация</NavLink>

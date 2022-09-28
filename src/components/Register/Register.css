@@ -25,6 +25,10 @@
   background: url(../../images/logo.svg);
 }
 
+.register__logo:hover {
+  opacity: .7;
+}
+
 @media screen and (max-width: 440px) {
   .register__logo {
     margin: 0 auto;
@@ -88,6 +92,10 @@
   cursor: pointer;
 }
 
+.register__button-register:hover {
+  opacity: .8;
+}
+
 @media screen and (max-width: 440px) {
   .register__button-register {
     margin: 240px 0 14px;
@@ -118,4 +126,8 @@
 .register__sign-in-link {
   text-decoration: none;
   color: #4285F4;
+}
+
+.register__sign-in-link:hover {
+  opacity: .7;
 }

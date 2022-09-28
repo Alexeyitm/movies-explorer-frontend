@@ -56,6 +56,10 @@
   cursor: pointer;
 }
 
+.portfolio__link:hover {
+  opacity: 0.7;
+}
+
 .portfolio__link:last-child {
   padding-bottom: 0;
   margin-bottom: 0;

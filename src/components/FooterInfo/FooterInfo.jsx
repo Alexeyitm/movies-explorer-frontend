@@ -1,5 +1,4 @@
 import './FooterInfo.css';
-import FooterLinks from './FooterLinks/FooterLinks';
 
 function FooterInfo() {
 
@@ -8,7 +7,18 @@ function FooterInfo() {
   return (
     <div className='footer__info'>
       <p className='footer__date'>&copy; {currentDate}</p>
-      <FooterLinks/>
+      <ul className='footer__links'>
+        <li className='footer__element'>
+          <a className='footer__link' href="https://practicum.yandex.ru/" target="_blank" rel="noreferrer">
+            Яндекс.Практикум
+          </a>
+        </li>
+        <li className='footer__element'>
+          <a className='footer__link' href="https://github.com/Alexeyitm/" target="_blank" rel="noreferrer">
+            Github
+          </a>
+        </li>
+      </ul>
     </div>
   );
 }

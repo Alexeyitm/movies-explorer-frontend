@@ -146,6 +146,10 @@
   cursor: pointer;
 }
 
+.about-me__github:hover {
+  opacity: 0.7;
+}
+
 .about-me__photo {
   grid-area: photo;
   width: 270px;

@@ -11,6 +11,10 @@
   z-index: 2;
 }
 
+.burger:hover {
+  opacity: 0.8;
+}
+
 .burger_hidden {
   display: none !important;
 }
