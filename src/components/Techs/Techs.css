@@ -2,6 +2,12 @@
   background: #272727;
 }
 
+@media screen and (max-width: 340px) {
+  .techs {
+    background: #202020;
+  }
+}
+
 .techs__container {
   max-width: 1140px;
   margin: 0 auto;
@@ -71,7 +77,8 @@
 }
 
 .techs__text {
-  margin: 26px 0 100px;
+  max-width: 460px;
+  margin: 26px auto 100px;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;

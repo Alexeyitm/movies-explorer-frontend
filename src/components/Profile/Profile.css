@@ -40,6 +40,12 @@
   }
 }
 
+@media screen and (max-width: 490px) {
+  .profile__form {
+    width: 260px;
+  }
+}
+
 @media screen and (max-width: 340px) {
   .profile__form {
     margin: 80px auto 0;

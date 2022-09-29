@@ -83,7 +83,7 @@
   font-weight: 500;
   font-size: 13px;
   line-height: 12px;
-  margin: 0 33px 0 auto;
+  margin: 0 36px 0 auto;
 }
 
 .header__link:last-child::after {
@@ -139,6 +139,7 @@
 @media screen and (max-width: 340px) {
   .header__link-registration {
     margin-right: 14px;
+    font-size: 10px;
   }
 }
 
@@ -150,6 +151,7 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
+  border-radius: 3px;
 }
 
 .header__link-signin:hover {
@@ -157,7 +159,8 @@
 }
 
 @media screen and (max-width: 340px) {
-  .header__link-main {
+  .header__link-signin {
     padding: 5px 12px;
+    font-size: 10px;
   }
 }

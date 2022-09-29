@@ -21,13 +21,13 @@ export const store = [
     title: "В погоне за Бенкси",
     time: 27,
     picture: image1,
-    isSaved: true,
+    isSaved: false,
   },
   {
     title: "В погоне за Бенкси",
     time: 27,
     picture: image2,
-    isSaved: true,
+    isSaved: false,
   },
   {
     title: "В погоне за Бенкси",
@@ -51,7 +51,7 @@ export const store = [
     title: "В погоне за Бенкси",
     time: 27,
     picture: image6,
-    isSaved: true,
+    isSaved: false,
   },
   {
     title: "В погоне за Бенкси",
@@ -75,7 +75,7 @@ export const store = [
     title: "В погоне за Бенкси",
     time: 27,
     picture: image10,
-    isSaved: false,
+    isSaved: true,
   },
   {
     title: "В погоне за Бенкси",

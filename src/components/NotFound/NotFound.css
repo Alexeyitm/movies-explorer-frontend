@@ -52,6 +52,10 @@
   cursor: pointer;
 }
 
+.not-found__back:hover {
+  opacity: .7;
+}
+
 @media screen and (max-width: 768px) {
   .not-found__back {
     margin-bottom: 222px;

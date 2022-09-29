@@ -27,12 +27,13 @@
   line-height: 130%;
   letter-spacing: -0.04em;
   max-width: 580px;
-  text-align: center;
+  text-align: left;
 }
 
 @media screen and (max-width: 768px) {
   .promo__title {
     margin: 0 auto;
+    text-align: center;
   }
 }
 
@@ -56,6 +57,7 @@
 
 @media screen and (max-width: 768px) {
   .promo__picture {
+    margin-top: 140px;
     width: 680px;
     height: 230px;
   }

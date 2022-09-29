@@ -68,6 +68,12 @@
   align-items: center;
 }
 
+@media screen and (max-width: 768px) {
+  .search-form__search {
+    padding-right: 228px;
+  }
+}
+
 @media screen and (max-width: 680px) {
   .search-form__search {
     padding: 0 19px;
@@ -89,6 +95,7 @@
 @media screen and (max-width: 680px) {
   .search-form__input {
     font-size: 14px;
+    width: 70%;
   }
 }
 
@@ -133,6 +140,12 @@
   right: 30px;
   display: flex;
   justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .search-form__check {
+    right: 22px;
+  }
 }
 
 @media screen and (max-width: 680px) {
