@@ -24,7 +24,7 @@ function Login() {
           <button className="login__button-login">Войти</button>
           <div className="login__register">
             <span className="login__span">Ещё не зарегистрированы?</span>
-            <NavLink className="login__register-link" to="/register">Регистрация</NavLink>
+            <NavLink className="login__register-link" to="/signup">Регистрация</NavLink>
           </div>
         </form>
     </div>

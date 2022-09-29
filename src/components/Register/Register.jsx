@@ -31,7 +31,7 @@ function Register() {
           <button className="register__button-register">Зарегистрироваться</button>
           <div className="register__sign-in">
             <span className="register__span">Уже зарегистрированы?</span>
-            <NavLink className="register__sign-in-link" to="/login">Войти</NavLink>
+            <NavLink className="register__sign-in-link" to="/signin">Войти</NavLink>
           </div>
         </form>
     </div>

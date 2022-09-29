@@ -54,8 +54,8 @@ function App() {
             />
           }/>
           <Route path='/profile' element={<Profile/>}/>
-          <Route path='/register' element={<Register/>}/>
-          <Route path='/login' element={<Login/>}/>
+          <Route path='/signup' element={<Register/>}/>
+          <Route path='/signin' element={<Login/>}/>
           <Route path='/*' element={<NotFound/>}/>
         </Routes>
 
