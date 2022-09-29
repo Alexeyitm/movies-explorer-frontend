@@ -63,7 +63,6 @@
 
 .register__input {
   width: 100%;
-  margin-bottom: 24px;
   padding: 5px 0 10px;
   font-weight: 400;
   font-size: 14px;
@@ -78,8 +77,25 @@
   border-bottom: 1px #4285F4 solid;
 }
 
+.register__input_invalid {
+  color: #EE3465;
+}
+
 .register__input_password {
   margin-bottom: 0;
+}
+
+.register__error {
+  visibility: hidden;
+  padding: 6px 0;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #EE3465;
+}
+
+.register__error_active {
+  visibility: visible;
 }
 
 .register__button-register {

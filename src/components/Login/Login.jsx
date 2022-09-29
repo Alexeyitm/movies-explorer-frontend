@@ -14,6 +14,7 @@ function Login() {
             type="email"
             name="email"
           />
+          <span className="login__error">Что-то пошло не так...</span>
           <label htmlFor="password" className="login__label">Пароль</label>
           <input
             id="password"
@@ -21,6 +22,7 @@ function Login() {
             type="password"
             name="password"
           />
+          <span className="login__error">Что-то пошло не так...</span>
           <button className="login__button-login">Войти</button>
           <div className="login__register">
             <span className="login__span">Ещё не зарегистрированы?</span>
