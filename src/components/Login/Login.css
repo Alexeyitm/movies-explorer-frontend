@@ -92,6 +92,10 @@
   cursor: pointer;
 }
 
+.login__input:focus {
+  border-bottom: 1px #4285F4 solid;
+}
+
 .login__button-login:hover {
   opacity: .8;
 }

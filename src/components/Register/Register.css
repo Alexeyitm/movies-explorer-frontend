@@ -74,6 +74,10 @@
   border-bottom: 1px #424242 solid;
 }
 
+.register__input:focus {
+  border-bottom: 1px #4285F4 solid;
+}
+
 .register__input_password {
   margin-bottom: 0;
 }
