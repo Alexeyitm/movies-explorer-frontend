@@ -1,0 +1,8 @@
+.app {
+  font-family: 'Inter', serif, sans-serif;
+  font-style: normal;
+  color: #FFFFFF;
+  min-height: 100vh;
+  background: #202020;
+  position: relative;
+}

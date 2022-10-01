@@ -1,0 +1,153 @@
+.register {
+  padding: 70px 0;
+  width: 396px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  .register {
+    padding: 232px 0 269px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .register {
+    padding: 55px 0 40px;
+    width: 260px;
+  }
+}
+
+.register__logo {
+  width: 38px;
+  height: 38px;
+  background: url(../../images/logo.svg);
+}
+
+.register__logo:hover {
+  opacity: .7;
+}
+
+@media screen and (max-width: 440px) {
+  .register__logo {
+    margin: 0 auto;
+  }
+}
+
+.register__title {
+  margin: 40px 0 40px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+@media screen and (max-width: 440px) {
+  .register__title {
+    margin: 50px 0 80px;
+    text-align: center;
+  }
+}
+
+.register__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.register__label {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #8B8B8B;
+}
+
+.register__input {
+  width: 100%;
+  padding: 5px 0 10px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
+  background: inherit;
+  border: none;
+  border-bottom: 1px #424242 solid;
+}
+
+.register__input:focus {
+  border-bottom: 1px #4285F4 solid;
+}
+
+.register__input_invalid {
+  color: #EE3465;
+}
+
+.register__input_password {
+  margin-bottom: 0;
+}
+
+.register__error {
+  visibility: hidden;
+  padding: 6px 0;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #EE3465;
+}
+
+.register__error_active {
+  visibility: visible;
+}
+
+.register__button-register {
+  margin: 152px 0 16px;
+  border: none;
+  width: 100%;
+  height: 45px;
+  padding: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
+  background: #4285F4;
+  cursor: pointer;
+}
+
+.register__button-register:hover {
+  opacity: .8;
+}
+
+@media screen and (max-width: 440px) {
+  .register__button-register {
+    margin: 240px 0 14px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+.register__sign-in {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+}
+
+@media screen and (max-width: 440px) {
+  .register__sign-in {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+.register__span {
+  padding-right: 6px;
+  color: #8B8B8B;
+}
+
+.register__sign-in-link {
+  text-decoration: none;
+  color: #4285F4;
+}
+
+.register__sign-in-link:hover {
+  opacity: .7;
+}

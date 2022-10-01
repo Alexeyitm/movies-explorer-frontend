@@ -1,0 +1,134 @@
+.profile {
+  width: 100%;
+  background: #202020;
+}
+
+.profile__container {
+  padding: 74px 0 70px;
+}
+
+@media screen and (max-width: 768px) {
+  .profile__container {
+    padding: 236px 0 269px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .profile__container {
+    padding: 70px 0 40px;
+  }
+}
+
+.profile__title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+}
+
+.profile__form {
+  margin: 123px auto 0;
+  width: 410px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  .profile__form {
+    margin: 96px auto 0;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .profile__form {
+    width: 260px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .profile__form {
+    margin: 80px auto 0;
+  }
+}
+
+.profile__name {
+  position: relative;
+  margin-bottom: 34px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile__name:after {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #424242;
+}
+
+.profile__email {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile__label {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.profile__input {
+  width: 80%;
+  padding: 0;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: right;
+  color: #FFFFFF;
+  background: inherit;
+  border: none;
+}
+
+.profile__button {
+  background: inherit;
+  border: none;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 13px;
+  line-height: 16px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 340px) {
+  .profile__button {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+.profile__button_edit {
+  margin: 220px auto 16px;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 768px) {
+  .profile__button_edit {
+    margin-top: 210px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .profile__button_edit {
+    margin-top: 379px;
+  }
+}
+
+.profile__button_exit {
+  font-weight: 500;
+  color: #EE3465;
+}
