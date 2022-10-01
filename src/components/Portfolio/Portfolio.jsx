@@ -8,13 +8,13 @@ function Portfolio() {
           Портфолио
         </h2>
         <div className="portfolio__links">
-          <a className="portfolio__link" href="https://alexeyitm.github.io/how-to-learn/">
+          <a className="portfolio__link" href="https://alexeyitm.github.io/how-to-learn/" target="_blank">
             Статичный сайт
           </a>
-          <a className="portfolio__link" href="https://github.com/Alexeyitm/russian-travel">
+          <a className="portfolio__link" href="https://github.com/Alexeyitm/russian-travel" target="_blank">
             Адаптивный сайт
           </a>
-          <a className="portfolio__link" href="https://alexeyitm.github.io/react-mesto-auth">
+          <a className="portfolio__link" href="https://alexeyitm.github.io/react-mesto-auth" target="_blank">
             Одностраничное приложение
           </a>
         </div>

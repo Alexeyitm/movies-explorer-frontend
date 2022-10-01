@@ -16,7 +16,7 @@ function AboutMe() {
           Я люблю слушать музыку, смотреть хорошее кино, а ещё хожу в зал.
           Недавно начал кодить. Стажировался в компании «Aston».
           </p>
-          <a className="about-me__github" href="https://github.com/Alexeyitm">
+          <a className="about-me__github" href="https://github.com/Alexeyitm" target="_blank">
             Github
           </a>
           <img className="about-me__photo" src={me} alt="Алексей"/>
