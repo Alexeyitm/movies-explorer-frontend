@@ -29,8 +29,8 @@ function Profile() {
               defaultValue={user.email}
             />
           </div>
-          <button className="profile__button profile__button_edit">Редактировать</button>
-          <button className="profile__button profile__button_exit">Выйти из аккаунта</button>
+          <button className="profile__button profile__button_edit" type="button">Редактировать</button>
+          <button className="profile__button profile__button_exit" type="button">Выйти из аккаунта</button>
         </form>
       </div>
     </div>

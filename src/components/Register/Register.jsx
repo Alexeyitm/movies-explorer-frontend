@@ -31,7 +31,7 @@ function Register() {
             name="password"
           />
           <span className="register__error register__error_active">Что-то пошло не так...</span>
-          <button className="register__button-register">Зарегистрироваться</button>
+          <button className="register__button-register" type="button">Зарегистрироваться</button>
           <div className="register__sign-in">
             <span className="register__span">Уже зарегистрированы?</span>
             <NavLink className="register__sign-in-link" to="/signin">Войти</NavLink>

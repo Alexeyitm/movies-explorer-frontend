@@ -16,7 +16,9 @@ function BurgerButton({ isActiveBurger, setBurger }) {
   return (
     <button
       className={`burger ${(location.pathname === "/movies" || location.pathname === "/saved-movies" || location.pathname === "/profile") ? "" : "burger_hidden"}`}
-      onClick={onClickBurger}>
+      onClick={onClickBurger}
+      type="button"
+    >
       <div className={`burger__line ${isActiveBurger ? "burger__line_active" : ""}`}></div>
     </button> 
   );

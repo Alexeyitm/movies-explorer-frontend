@@ -23,7 +23,7 @@ function Login() {
             name="password"
           />
           <span className="login__error">Что-то пошло не так...</span>
-          <button className="login__button-login">Войти</button>
+          <button className="login__button-login" type="button">Войти</button>
           <div className="login__register">
             <span className="login__span">Ещё не зарегистрированы?</span>
             <NavLink className="login__register-link" to="/signup">Регистрация</NavLink>

@@ -12,7 +12,7 @@ function MoviesCardList({ SavedMovies }) {
             : store.map(el => <MoviesCard card={el} key={el.picture}/>)
           }
         </div>
-        <button className="movies-card-list__button">Ещё</button>
+        <button className="movies-card-list__button" type="button">Ещё</button>
       </div>
       
     </div>

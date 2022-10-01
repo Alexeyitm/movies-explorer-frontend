@@ -15,6 +15,7 @@ function MoviesCard({ card, SavedMovies }) {
               : "movies-card__button_save-movie"
           }`
         }
+        type="button"
       >
         {!card.isSaved ? "Сохранить" : ""}
       </button>
