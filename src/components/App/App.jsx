@@ -39,30 +39,32 @@ function App() {
           setBurger={setBurger}
         />
 
-        <Routes>
-          <Route path='/' element={<Main/>}/>
-          <Route path='/movies' element={
-            <Movies
-              isActiveCheckbox={isActiveCheckbox}
-              setCheckbox={setCheckbox}
-            />
-          }/>
-          <Route path='/saved-movies' element={
-            <SavedMovies
-              isActiveCheckbox={isActiveCheckbox}
-              setCheckbox={setCheckbox}
-            />
-          }/>
-          <Route path='/profile' element={<Profile/>}/>
-          <Route path='/signup' element={<Register/>}/>
-          <Route path='/signin' element={<Login/>}/>
-          <Route path='/*' element={<NotFound/>}/>
-        </Routes>
+        <main>
+          <Routes>
+            <Route path='/' element={<Main/>}/>
+            <Route path='/movies' element={
+              <Movies
+                isActiveCheckbox={isActiveCheckbox}
+                setCheckbox={setCheckbox}
+              />
+            }/>
+            <Route path='/saved-movies' element={
+              <SavedMovies
+                isActiveCheckbox={isActiveCheckbox}
+                setCheckbox={setCheckbox}
+              />
+            }/>
+            <Route path='/profile' element={<Profile/>}/>
+            <Route path='/signup' element={<Register/>}/>
+            <Route path='/signin' element={<Login/>}/>
+            <Route path='/*' element={<NotFound/>}/>
+          </Routes>
 
-        <BurgerMenu
-          isActiveBurger={isActiveBurger}
-          setBurger={setBurger}
-        />
+          <BurgerMenu
+            isActiveBurger={isActiveBurger}
+            setBurger={setBurger}
+          />
+        </main>
 
         <Footer/>
       </div>
