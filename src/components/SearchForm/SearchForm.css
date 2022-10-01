@@ -99,6 +99,10 @@
   }
 }
 
+.search-form__input:focus {
+  border-bottom: 1px #4285F4 solid;
+}
+
 .search-form__button {
   position: relative;
   margin-left: auto;
