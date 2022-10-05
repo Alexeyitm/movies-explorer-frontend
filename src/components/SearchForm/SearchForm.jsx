@@ -1,14 +1,37 @@
 import './SearchForm.css';
 import Checkbox from '../Checkbox/Checkbox';
 
-function SearchForm({ isActiveCheckbox, setCheckbox }) {
+function SearchForm({
+  isActiveCheckbox,
+  setCheckbox,
+  isMoviesInput,
+  setMoviesInput,
+  searchMovies,
+}) {
+
+  const handleSearchChange = (e) => {
+    setMoviesInput(e.target.value);
+  }
+
   return (
     <div className="search-form">
       <div className="search-form__container">
         <form className="search-form__form" name="form" required>
           <div className="search-form__search">
-            <input id="movie" className="search-form__input" type="text" name="input" placeholder="Фильм"/>
-            <button className="search-form__button" type="submit"></button>
+            <input
+              id="movie"
+              className="search-form__input"
+              type="text"
+              name="input"
+              placeholder="Фильм"
+              value={isMoviesInput}
+              onChange={handleSearchChange}
+            />
+            <button
+              className="search-form__button"
+              type="submit"
+              onClick={searchMovies}
+            ></button>
           </div>
           <div className="search-form__check">
             <Checkbox

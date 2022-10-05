@@ -12,11 +12,14 @@ import Login from '../Login/Login';
 import NotFound from '../NotFound/NotFound';
 import Footer from '../Footer/Footer';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
+import { apiMovies } from '../../utils/MoviesApi';
 
 function App() {
 
   const [isActiveCheckbox, setCheckbox] = useState(true);
   const [isActiveBurger, setBurger] = useState(false);
+  const [isMoviesInput, setMoviesInput] = useState('');
+  const [isSearching, setSearching] = useState(false);
 
   useEffect(() => {
     function closeByEscape(e) {
@@ -32,6 +35,14 @@ function App() {
     }
   }, [isActiveBurger]);
 
+  const searchMovies = (e) => {
+    e.preventDefault();
+    setSearching(true);
+    apiMovies
+      .getMovies()
+      .then(movies => localStorage.setItem("movies", JSON.stringify(movies)));
+  }
+
   return (
       <div className="app">
         <Header
@@ -46,6 +57,10 @@ function App() {
               <Movies
                 isActiveCheckbox={isActiveCheckbox}
                 setCheckbox={setCheckbox}
+                isMoviesInput={isMoviesInput}
+                setMoviesInput={setMoviesInput}
+                searchMovies={searchMovies}
+                isSearching={isSearching}
               />
             }/>
             <Route path='/saved-movies' element={
@@ -65,7 +80,6 @@ function App() {
             setBurger={setBurger}
           />
         </main>
-
         <Footer/>
       </div>
     

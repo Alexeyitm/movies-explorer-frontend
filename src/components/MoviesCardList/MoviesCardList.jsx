@@ -1,20 +1,18 @@
 import './MoviesCardList.css';
-import MoviesCard from '../MoviesCard/MoviesCard';
-import { store } from "../../store";
+import Preloader from '../Preloader/Preloader';
+//import MoviesCard from '../MoviesCard/MoviesCard';
+//import { store } from "../../store";
 
-function MoviesCardList({ SavedMovies }) {
+function MoviesCardList({ isSearching }) {
   return (
     <div className="movies-card-list">
       <div className="movies-card-list__container">
         <div className="movies-card-list__cards">
-          {SavedMovies
-            ? store.map(el => {if (el.isSaved) return <MoviesCard SavedMovies card={el} key={el.picture}/>})
-            : store.map(el => <MoviesCard card={el} key={el.picture}/>)
-          }
+
         </div>
         <button className="movies-card-list__button" type="button">Ещё</button>
       </div>
-      
+      <Preloader isSearching={isSearching}/>
     </div>
   );
 }
