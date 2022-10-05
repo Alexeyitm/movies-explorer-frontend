@@ -12,13 +12,15 @@ import Login from '../Login/Login';
 import NotFound from '../NotFound/NotFound';
 import Footer from '../Footer/Footer';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
+import Preloader from '../Preloader/Preloader';
 import { apiMovies } from '../../utils/MoviesApi';
 
 function App() {
 
-  const [isActiveCheckbox, setCheckbox] = useState(true);
   const [isActiveBurger, setBurger] = useState(false);
+  const [isActiveCheckbox, setCheckbox] = useState(false);
   const [isMoviesInput, setMoviesInput] = useState('');
+  const [isMovies, setMovies] = useState([]);
   const [isSearching, setSearching] = useState(false);
 
   useEffect(() => {
@@ -35,12 +37,30 @@ function App() {
     }
   }, [isActiveBurger]);
 
+  const filterMovies = (arr, query) => {
+    return arr.filter(el => 
+      (el.nameRU.toLowerCase().indexOf(query.toLowerCase()) !== -1) &&
+      (isActiveCheckbox ? el.duration <= 45 : el.duration > 45)
+    )
+  }
+
   const searchMovies = (e) => {
     e.preventDefault();
-    setSearching(true);
-    apiMovies
-      .getMovies()
-      .then(movies => localStorage.setItem("movies", JSON.stringify(movies)));
+    if (!isMoviesInput) {
+      throw new Error("Нужно ввести ключевое слово");
+    } else {
+      setSearching(true);
+      apiMovies
+        .getMovies()
+        .then(movies => {
+          localStorage.setItem("switch", isActiveCheckbox);
+          localStorage.setItem("input", isMoviesInput);
+          localStorage.setItem("movies", JSON.stringify(movies));
+          setMovies(filterMovies(movies, localStorage.input))
+          console.log(isMovies)
+        })
+        .finally(setSearching(false));
+    }
   }
 
   return (
@@ -60,7 +80,7 @@ function App() {
                 isMoviesInput={isMoviesInput}
                 setMoviesInput={setMoviesInput}
                 searchMovies={searchMovies}
-                isSearching={isSearching}
+                isMovies={isMovies}
               />
             }/>
             <Route path='/saved-movies' element={
@@ -80,6 +100,9 @@ function App() {
             setBurger={setBurger}
           />
         </main>
+
+        <Preloader isSearching={isSearching} />
+
         <Footer/>
       </div>
     

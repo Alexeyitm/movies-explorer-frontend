@@ -11,6 +11,10 @@
   justify-content: center;
 }
 
+.movies-card-list__container_active {
+  display: block;
+}
+
 @media screen and (max-width: 900px) {
   .movies-card-list__container {
     padding: 80px 30px 30px;

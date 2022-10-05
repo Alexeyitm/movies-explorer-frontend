@@ -8,7 +8,7 @@ function Movies({
   isMoviesInput,
   setMoviesInput,
   searchMovies,
-  isSearching,
+  isMovies,
 }) {
   return (
     <div className="movies">
@@ -20,7 +20,7 @@ function Movies({
         searchMovies={searchMovies}
       />
       <MoviesCardList
-        isSearching={isSearching}
+        isMovies={isMovies}
       />
     </div>
   );
