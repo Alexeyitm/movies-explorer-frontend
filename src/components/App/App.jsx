@@ -87,6 +87,10 @@ function App() {
               <SavedMovies
                 isActiveCheckbox={isActiveCheckbox}
                 setCheckbox={setCheckbox}
+                isMoviesInput={isMoviesInput}
+                setMoviesInput={setMoviesInput}
+                searchMovies={searchMovies}
+                isMovies={isMovies}
               />
             }/>
             <Route path='/profile' element={<Profile/>}/>

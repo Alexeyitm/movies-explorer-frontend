@@ -1,8 +1,10 @@
 import './MoviesCard.css';
+import { useLocation } from "react-router-dom";
 
-function MoviesCard({ movie, SavedMovies }) {
+function MoviesCard({ movie }) {
 
   const url = 'https://api.nomoreparties.co';
+  const location = useLocation();
 
   return (
     <article className="movies-card">
@@ -11,16 +13,14 @@ function MoviesCard({ movie, SavedMovies }) {
       <img className="movies-card__picture" src={url + movie.image.formats.thumbnail.url} alt={movie.nameRU}/>
       <button 
         className={`movies-card__button 
-          ${SavedMovies
+          ${location.pathname === "/saved-movies"
             ? "movies-card__button_delete-movie"
-            : movie
-              ? "movies-card__button_saving-movie"
-              : "movies-card__button_save-movie"
+            : "movies-card__button_saving-movie"
           }`
         }
         type="button"
       >
-        {!movie.isSaved ? "Сохранить" : ""}
+        {location.pathname === "/saved-movies" ? "" : "Сохранить"}
       </button>
     </article>
   );
