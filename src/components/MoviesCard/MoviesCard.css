@@ -8,6 +8,7 @@
 }
 
 .movies-card__title {
+  max-width: 65%;
   margin: 0;
   padding: 18px 0 18px 18px;
   font-weight: 500;
