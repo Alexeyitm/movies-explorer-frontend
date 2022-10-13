@@ -18,10 +18,12 @@ import { apiMovies } from '../../utils/MoviesApi';
 function App() {
 
   const [isActiveBurger, setBurger] = useState(false);
-  const [isCheckbox, setCheckbox] = useState(false);
-  const [isMoviesInput, setMoviesInput] = useState('');
+  const [isMoviesInput, setMoviesInput] = useState(localStorage.searchInput || '');
+  const [isCheckbox, setCheckbox] = useState(localStorage.checkboxMovies);
   const [isMovies, setMovies] = useState([]);
   const [isSearching, setSearching] = useState(false);
+
+  console.log(isCheckbox)
 
   // Фильтрация фильмов согласно инпуту
   const filterMovies = (arr, query, checkbox) => {
@@ -47,6 +49,8 @@ function App() {
       localStorage.setItem("searchMoviesShort", filterMovies(JSON.parse(localStorage.allMovies), isMoviesInput, false));
       localStorage.setItem("checkboxMovies", isCheckbox);
       setMoviesCards();
+    
+      console.log(localStorage.checkboxMovies)
     }
   }
 

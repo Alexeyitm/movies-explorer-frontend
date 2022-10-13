@@ -2,6 +2,8 @@ import './Checkbox.css';
 
 function AboutMe({ isCheckbox, setCheckbox }) {
 
+  console.log(isCheckbox)
+
   const onClickCheckbox = () => {
     setCheckbox(!isCheckbox);
   }
