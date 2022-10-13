@@ -23,24 +23,30 @@ function App() {
   const [isMovies, setMovies] = useState([]);
   const [isSearching, setSearching] = useState(false);
 
-  const filterMovies = (arr, query) => {
-    return arr.filter(el => 
+  // Фильтрация фильмов согласно инпуту
+  const filterMovies = (arr, query, checkbox) => {
+    return JSON.stringify(arr.filter(el =>
       (el.nameRU.toLowerCase().indexOf(query.toLowerCase()) !== -1) &&
-      (isCheckbox ? el.duration <= 45 : el.duration > 45)
-    )
+      (checkbox ? el.duration <= 45 : el.duration > 0)
+    ))
   }
 
+  // Сохранение фильмов в стейт
+  const setMoviesCards = () => {
+    isCheckbox ? setMovies(JSON.parse(localStorage.searchMoviesAll)) : setMovies(JSON.parse(localStorage.searchMoviesShort))
+  }
+
+  // Сохранение инпута, массива найденных фильмов и состояния чек-бокса в localStorage
   const searchMovies = (e) => {
     e.preventDefault();
     if (!isMoviesInput) {
       throw new Error("Нужно ввести ключевое слово");
     } else {
       localStorage.setItem("searchInput", isMoviesInput);
-      localStorage.setItem("searchMovies", localStorage.allMovies);
+      localStorage.setItem("searchMoviesAll", filterMovies(JSON.parse(localStorage.allMovies), isMoviesInput, true));
+      localStorage.setItem("searchMoviesShort", filterMovies(JSON.parse(localStorage.allMovies), isMoviesInput, false));
       localStorage.setItem("checkboxMovies", isCheckbox);
-      console.log(localStorage.searchInput)
-      console.log(JSON.parse(localStorage.searchMovies))
-      console.log(localStorage.checkboxMovies)
+      setMoviesCards();
     }
   }
 
@@ -52,6 +58,11 @@ function App() {
       localStorage.setItem("allMovies", JSON.stringify(movies));
     })
   }, []);
+
+  // Перерисовка карточек в зависимости от чекбокса
+  useEffect(() => {
+    setMoviesCards();
+  }, [isCheckbox]);
 
   // Закрытие бургер-меню нажатием на Esc
   useEffect(() => {
