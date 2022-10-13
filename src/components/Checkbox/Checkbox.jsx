@@ -1,13 +1,13 @@
 import './Checkbox.css';
 
-function AboutMe({ isActiveCheckbox, setCheckbox }) {
+function AboutMe({ isCheckbox, setCheckbox }) {
 
   const onClickCheckbox = () => {
-    setCheckbox(!isActiveCheckbox);
+    setCheckbox(!isCheckbox);
   }
 
   return (
-    <input className={`checkbox ${isActiveCheckbox ? "checkbox_active" : ""}`} type="checkbox" id="checkbox" onClick={onClickCheckbox}></input>
+    <input className={`checkbox ${isCheckbox ? "checkbox_active" : ""}`} type="checkbox" id="checkbox" onClick={onClickCheckbox}></input>
   );
 }
 

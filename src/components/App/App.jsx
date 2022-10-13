@@ -18,11 +18,42 @@ import { apiMovies } from '../../utils/MoviesApi';
 function App() {
 
   const [isActiveBurger, setBurger] = useState(false);
-  const [isActiveCheckbox, setCheckbox] = useState(false);
+  const [isCheckbox, setCheckbox] = useState(false);
   const [isMoviesInput, setMoviesInput] = useState('');
   const [isMovies, setMovies] = useState([]);
   const [isSearching, setSearching] = useState(false);
 
+  const filterMovies = (arr, query) => {
+    return arr.filter(el => 
+      (el.nameRU.toLowerCase().indexOf(query.toLowerCase()) !== -1) &&
+      (isCheckbox ? el.duration <= 45 : el.duration > 45)
+    )
+  }
+
+  const searchMovies = (e) => {
+    e.preventDefault();
+    if (!isMoviesInput) {
+      throw new Error("Нужно ввести ключевое слово");
+    } else {
+      localStorage.setItem("searchInput", isMoviesInput);
+      localStorage.setItem("searchMovies", localStorage.allMovies);
+      localStorage.setItem("checkboxMovies", isCheckbox);
+      console.log(localStorage.searchInput)
+      console.log(JSON.parse(localStorage.searchMovies))
+      console.log(localStorage.checkboxMovies)
+    }
+  }
+
+  // Сохранение всех фильмов в localStorage при загрузке страницы
+  useEffect(() => {
+    apiMovies
+      .getMovies()
+      .then(movies => {
+      localStorage.setItem("allMovies", JSON.stringify(movies));
+    })
+  }, []);
+
+  // Закрытие бургер-меню нажатием на Esc
   useEffect(() => {
     function closeByEscape(e) {
       if (e.key === 'Escape') {
@@ -37,32 +68,6 @@ function App() {
     }
   }, [isActiveBurger]);
 
-  const filterMovies = (arr, query) => {
-    return arr.filter(el => 
-      (el.nameRU.toLowerCase().indexOf(query.toLowerCase()) !== -1) &&
-      (isActiveCheckbox ? el.duration <= 45 : el.duration > 45)
-    )
-  }
-
-  const searchMovies = (e) => {
-    e.preventDefault();
-    if (!isMoviesInput) {
-      throw new Error("Нужно ввести ключевое слово");
-    } else {
-      setSearching(true);
-      apiMovies
-        .getMovies()
-        .then(movies => {
-          localStorage.setItem("switch", isActiveCheckbox);
-          localStorage.setItem("input", isMoviesInput);
-          localStorage.setItem("movies", JSON.stringify(movies));
-          setMovies(filterMovies(movies, localStorage.input))
-          console.log(isMovies)
-        })
-        .finally(setSearching(false));
-    }
-  }
-
   return (
       <div className="app">
         <Header
@@ -75,7 +80,7 @@ function App() {
             <Route path='/' element={<Main/>}/>
             <Route path='/movies' element={
               <Movies
-                isActiveCheckbox={isActiveCheckbox}
+                isCheckbox={isCheckbox}
                 setCheckbox={setCheckbox}
                 isMoviesInput={isMoviesInput}
                 setMoviesInput={setMoviesInput}
@@ -85,7 +90,7 @@ function App() {
             }/>
             <Route path='/saved-movies' element={
               <SavedMovies
-                isActiveCheckbox={isActiveCheckbox}
+                isCheckbox={isCheckbox}
                 setCheckbox={setCheckbox}
                 isMoviesInput={isMoviesInput}
                 setMoviesInput={setMoviesInput}

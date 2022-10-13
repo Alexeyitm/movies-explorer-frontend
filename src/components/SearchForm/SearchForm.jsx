@@ -2,7 +2,7 @@ import './SearchForm.css';
 import Checkbox from '../Checkbox/Checkbox';
 
 function SearchForm({
-  isActiveCheckbox,
+  isCheckbox,
   setCheckbox,
   isMoviesInput,
   setMoviesInput,
@@ -35,7 +35,7 @@ function SearchForm({
           </div>
           <div className="search-form__check">
             <Checkbox
-              isActiveCheckbox={isActiveCheckbox}
+              isCheckbox={isCheckbox}
               setCheckbox={setCheckbox}
             />
             <label className="search-form__label" htmlFor="checkbox">Короткометражки</label>

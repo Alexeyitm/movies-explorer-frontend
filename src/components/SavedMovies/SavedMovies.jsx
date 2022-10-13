@@ -3,7 +3,7 @@ import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 
 function SavedMovies({
-  isActiveCheckbox,
+  isCheckbox,
   setCheckbox,
   isMoviesInput,
   setMoviesInput,
@@ -13,7 +13,7 @@ function SavedMovies({
   return (
     <div className="saved-movies">
       <SearchForm
-        isActiveCheckbox={isActiveCheckbox}
+        isCheckbox={isCheckbox}
         setCheckbox={setCheckbox}
         isMoviesInput={isMoviesInput}
         setMoviesInput={setMoviesInput}
